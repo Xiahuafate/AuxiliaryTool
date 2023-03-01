@@ -11,3 +11,13 @@
 ## 代码中常见缩写
 
 * GV: GlobalVaribale
+
+# 其他的命令
+
+## 生成requirements.txt文件
+
+pipreqs ./ --encoding=utf-8 --force
+
+## 从requirements.txt文件中安装需要的库
+
+pip install -r requirement.txt
