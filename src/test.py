@@ -1,3 +1,4 @@
+
 import matplotlib.pyplot as plt
 from matplotlib.patches import RegularPolygon
 from matplotlib.collections import PatchCollection
@@ -63,7 +64,18 @@ p = PatchCollection(patches,cmap=pcm.jet,alpha=0.3,edgecolor="k",linewidth=0.5)
 p.set_array(np.array(values))
 ax.add_collection(p)
 plt.colorbar(p,shrink=0.72,extend="neither",extendfrac=0.0,format="$%.2f$")
-plt.show()
+
+x_min = min(hcoord) - pitch
+x_max = max(hcoord) + pitch
+y_min = min(vcoord) - pitch
+y_max = max(vcoord) + pitch
+
+plt.xlim(x_min,x_max)
+plt.ylim(y_min,y_max)
+
+# plt.axis("off")
+# plt.show()
+plt.savefig("figure.png",dpi=300,bbox_inches="tight")
 
 # import numpy as np
 # import matplotlib.pyplot as plt
